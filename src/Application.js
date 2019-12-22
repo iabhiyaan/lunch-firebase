@@ -37,13 +37,8 @@ class Application extends Component {
 				});
 			} else {
 				this.setState({
-<<<<<<< HEAD
-					...this.state,
-					currentUser: null,
-					loading: false
-=======
 					loading: false,
->>>>>>> ea07baee52ddd8c2e23bcec7bd0f240eb0befa65
+					currentUser: null
 				});
 			}
 		});
@@ -57,22 +52,6 @@ class Application extends Component {
 					<NewRestaurant />
 					<CurrentUser user={currentUser} />
 					<Restaurants restaurants={restaurants} user={currentUser} />
-<<<<<<< HEAD
-
-					{/* ----😎 Using library 😎--- */}
-					{/* {map(restaurants, (restaurant, key) => <p key={key}> {restaurant.name} </p>)} */}
-					{/* 😎😎 Using keys long and confusing but useful though 😀😀  */}
-
-					{/* {restaurants &&
-						Object.keys(restaurants).map((restaurant, key) => (
-							<p key={key}>
-								<span className="font-weight-bold">{restaurants[restaurant].name}</span> is great place ho
-								hangout
-							</p>
-						))} */}
-=======
-					<CurrentUser user={currentUser} />
->>>>>>> ea07baee52ddd8c2e23bcec7bd0f240eb0befa65
 				</div>
 			);
 		} else if (!currentUser) {
