@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 // import map from "lodash/map";
+// import Skeleton from "react-loading-skeleton";
 
 import { auth, database } from "./firebase";
 import CurrentUser from "./CurrentUser";
@@ -8,6 +9,8 @@ import NewRestaurant from "./NewRestaurant";
 import Restaurants from "./Restaurants";
 import Restaurant from "./Restaurant";
 import Loading from "./Loading";
+import Skeleton from "./Skeleton";
+
 import "./Application.css";
 
 class Application extends Component {
@@ -55,8 +58,10 @@ class Application extends Component {
 				</div>
 			);
 		} else if (!currentUser) {
-			cUser = loading && <Loading />;
-			// cUser = loading && <p>Loading...</p>;
+			// cUser = loading && <Skeleton skull={true} amount={3} direction={'row'} />;
+			cUser = loading && <Skeleton marginTop="100px" loadingName />;
+			// cUser = loading && <Loading marginTop="90px" />;
+
 			if (!loading) {
 				cUser = <SignIn />;
 			}
@@ -65,6 +70,7 @@ class Application extends Component {
 			<div className="Application container">
 				<header className="Application--header">
 					<h1>Lunch Rush</h1>
+					{/* <Skeleton loadingName /> */}
 					{cUser}
 				</header>
 			</div>

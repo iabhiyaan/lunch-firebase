@@ -1,8 +1,8 @@
 import React from "react";
 import "./Loading.css";
-const Loading = () => {
+const Loading = ({ marginTop }) => {
 	return (
-		<div class="timeline-wrapper">
+		<div class="timeline-wrapper" style={{ marginTop }}>
 			<div class="timeline-item">
 				<div class="animated-background">
 					<div class="background-masker header-top" />

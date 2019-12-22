@@ -1,0 +1,63 @@
+@keyframes backgroundAnimation {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.notice-list {
+  padding: 20px 30px;
+  max-width: 642px;
+  border: 1px solid #ccc;
+}
+.notice--loading {
+  padding: 8px;
+  background: white;
+  height: 140px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 71px 1fr;
+  grid-template-rows: auto repeat(4, 10px);
+  grid-row-gap: 8px;
+  margin-bottom: 8px;
+}
+.notice--loading__img {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+}
+.notice--loading__name {
+  height: 10px;
+  width: 140px;
+  flex-basis: 33%;
+  margin-left: 27px;
+}
+
+.notice--loading__bar {
+  grid-column: 2/3;
+}
+
+.notice--loading__bar:last-child {
+  max-width: 200px;
+}
+.notice--loading__bar,
+.notice--loading__name,
+.notice--loading__img {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: backgroundAnimation;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-size: 800px 104px;
+  position: relative;
+}
+.notice--loading__header {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  grid-column: 1 / 3;
+}

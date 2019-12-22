@@ -8,7 +8,7 @@ class Restaurant extends Component {
 		const { name, votes, handleVotes, handleUnVotes, user } = this.props;
 		const userHasSelected = votes && Object.keys(votes).includes(user.uid);
 		return (
-			<article className="Restaurant col-lg-3">
+			<article className="Restaurant col-lg-4">
 				<p>
 					<span className="font-weight-bold"> {name} </span> is great place to hangout
 				</p>

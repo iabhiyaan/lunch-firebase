@@ -6,7 +6,8 @@ import { database } from "./firebase";
 import Restaurant from "./Restaurant";
 import "./Restaurants.css";
 import Loading from "./Loading";
-
+import Skeleton from "./Skeleton";
+import Bone from "./Bone";
 class Restaurants extends Component {
 	constructor(props) {
 		super(props);
@@ -25,11 +26,7 @@ class Restaurants extends Component {
 	}
 	render() {
 		const { restaurants, user } = this.props;
-		const getLoaders = Array.from({ length: 3 }).map((_, i) => (
-			<div className="col-lg-4">
-				<Loading key={i} />
-			</div>
-		));
+		const getLoaders = Array.from({ length: 3 }).map((_, i) => <Bone key={i} counts={3} />);
 		return (
 			<section className="Restaurants row">
 				{restaurants ? (
